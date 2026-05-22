@@ -37,12 +37,23 @@ def chunk_documents(docs, chunk_size: int = 500, chunk_overlap: int = 50):
     return chunks
 
 
+def _pick_device() -> str:
+    """Pick the best available device: mps (M-series Mac) > cuda > cpu."""
+    import torch
+    if torch.backends.mps.is_available():
+        return "mps"
+    if torch.cuda.is_available():
+        return "cuda"
+    return "cpu"
+
+
 def get_embeddings(model_name: str = EMBEDDING_MODEL):
-    """Load the embedding model (runs on CPU/MPS automatically)."""
-    print(f"Loading embedding model: {model_name}")
+    """Load the embedding model on the best available device."""
+    device = _pick_device()
+    print(f"Loading embedding model: {model_name} (device={device})")
     return HuggingFaceEmbeddings(
         model_name=model_name,
-        model_kwargs={"device": "mps"},   # M2 GPU. Use "cpu" if MPS errors.
+        model_kwargs={"device": device},
         encode_kwargs={"normalize_embeddings": True},
     )
 

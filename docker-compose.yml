@@ -1,0 +1,13 @@
+services:
+  copilot:
+    build: .
+    container_name: research-copilot
+    ports:
+      - "8000:8000"
+    environment:
+      - HUGGINGFACEHUB_API_TOKEN=${HUGGINGFACEHUB_API_TOKEN}
+    volumes:
+      # Persist vector store and data between container restarts
+      - ./vectorstore:/app/vectorstore
+      - ./data:/app/data
+    restart: unless-stopped
