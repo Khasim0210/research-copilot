@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the Transformer architecture?",
+    "ground_truth_answer": "The Transformer is a model architecture based entirely on attention mechanisms, dispensing with recurrence and convolutions. It uses stacked self-attention and point-wise fully connected layers in both the encoder and decoder.",
+    "relevant_keywords": ["transformer", "attention", "encoder", "decoder", "self-attention"]
+  },
+  {
+    "question": "How many layers does the encoder have?",
+    "ground_truth_answer": "The encoder is composed of a stack of N = 6 identical layers.",
+    "relevant_keywords": ["encoder", "6", "six", "layers", "stack", "N ="]
+  },
+  {
+    "question": "What is multi-head attention?",
+    "ground_truth_answer": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. It uses h=8 parallel attention layers (heads).",
+    "relevant_keywords": ["multi-head", "attention", "heads", "parallel", "8", "subspaces"]
+  },
+  {
+    "question": "What is positional encoding?",
+    "ground_truth_answer": "Positional encoding injects information about token positions into the embeddings using sine and cosine functions of different frequencies, since the Transformer has no recurrence.",
+    "relevant_keywords": ["positional", "encoding", "sine", "cosine", "position"]
+  },
+  {
+    "question": "What datasets were used for training?",
+    "ground_truth_answer": "WMT 2014 English-German (4.5M sentence pairs) and WMT 2014 English-French (36M sentences) were the main translation datasets. The Penn Treebank WSJ portion (~40K sentences) was used for English constituency parsing.",
+    "relevant_keywords": ["WMT", "English-German", "English-French", "Penn Treebank", "WSJ"]
+  },
+  {
+    "question": "What optimizer was used?",
+    "ground_truth_answer": "The Adam optimizer was used with beta1 = 0.9, beta2 = 0.98, and epsilon = 10^-9.",
+    "relevant_keywords": ["Adam", "optimizer", "beta", "epsilon"]
+  },
+  {
+    "question": "What is the dimensionality of the model?",
+    "ground_truth_answer": "The base model uses d_model = 512 across all sub-layers and embedding layers.",
+    "relevant_keywords": ["d_model", "512", "dimension"]
+  },
+  {
+    "question": "What is scaled dot-product attention?",
+    "ground_truth_answer": "Scaled dot-product attention computes attention as softmax(QK^T / sqrt(d_k)) V, scaling the dot products by sqrt(d_k) to prevent the softmax from saturating.",
+    "relevant_keywords": ["scaled", "dot-product", "attention", "softmax", "sqrt"]
+  }
+]
