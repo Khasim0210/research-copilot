@@ -37,7 +37,7 @@ def search(vectorstore, query: str, k: int = 5):
 
 if __name__ == "__main__":
     # Build the index, then test retrieval
-    from ingest import load_documents, chunk_documents, get_embeddings
+    from src.ingest import load_documents, chunk_documents, get_embeddings
 
     docs = load_documents()
     chunks = chunk_documents(docs)

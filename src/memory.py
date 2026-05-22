@@ -11,9 +11,9 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 
-from rag_chain import get_llm, format_docs
-from vectorstore import load_vectorstore, VECTORSTORE_DIR
-from ingest import get_embeddings
+from src.rag_chain import get_llm, format_docs
+from src.vectorstore import load_vectorstore, VECTORSTORE_DIR
+from src.ingest import get_embeddings
 
 load_dotenv()
 
